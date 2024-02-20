@@ -1,0 +1,42 @@
+{% extends "base.html" %} {% block content %}
+<!-- <h2 class="font mt-2" style="color: rgb(224, 200, 200);">{{pagename}} Page</h2> -->
+<div class="row">
+    <div class="col">
+        <div class="d-flex justify-content-end">
+            <form method="get">
+                <button name="next" type="submit" class="btn btn-text p-0 text-dark">Next page</button></form>
+        </div>
+    </div>
+    <div class="col">
+        <div class="d-flex justify-content-start">
+            <p class="text m-1">{{rout}}</p>
+        </div>
+    </div>
+</div>
+
+
+
+
+<div class="container mt-4">
+    <div class="row">
+        {% for product_name, product_info in data_dict.items %}
+        <div class="col-md-4 mb-4 col-lg-3 col-sm-6">
+            <div class="card">
+                <a href="{{product_info.source}}" target="_blank" class="text-dark">
+                <img src="{{ product_info.Image_url}}" class="card-img-top p-3" alt="{{ product_name }}">
+                <div class="card-body">
+                    <h5 class="card-title">{{ product_name }}</h5>
+                </a>
+                    <p class="card-text">Price: {{ product_info.Price }}</p>
+                    <p class="card-text">Description: {{ product_info.Description }}</p>
+                    <p class="card-text">Reviews: {{ product_info.Reviews }} <img class="mb-1" height="16px" width="16px" src="https://cdn0.iconfinder.com/data/icons/stars-rounded/250/Green_Star_5-1024.png" alt=""></p>
+                </div>
+            </div>
+        </div>
+        
+        {% endfor %}
+    </div>
+</div>
+
+
+{%endblock%}

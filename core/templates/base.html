@@ -1,0 +1,125 @@
+{% include 'starter.html' %}
+<div class="container-fluid" >
+  <nav class="navbar navbar-expand-lg navbar-light  bg-light ms-2 ms-2">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#" style=" font-style: normal;color: gray;
+        font-weight: 500;">Pricetracker</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link font" aria-current="page" href="{% url 'homepage'%}">Home</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link font" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Mobile
+              </a>
+              <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <li><a class="dropdown-item" style="color: gray;" href="{% url 'productpage' 'Poco' %}">Poco</a></li>
+              <li><a class="dropdown-item" style="color: gray;" href="{% url 'productpage' 'Infinix' %}">Infinix</a></li>
+              <li><a class="dropdown-item" style="color: gray;" href="{% url 'productpage' 'Vivo' %}">Vivo</a></li>
+              <li><a class="dropdown-item" style="color: gray;" href="{% url 'productpage' 'Samsung mobiles' %}">Samsung mobiles</a></li>
+              <li><a class="dropdown-item" style="color: gray;" href="{% url 'productpage' 'Apple iphone' %}">Apple iphone</a></li>
+              <li><a class="dropdown-item" style="color: gray;" href="{% url 'productpage' 'OnePlus mobiles' %}">OnePlus mobiles</a></li>
+              <li><a class="dropdown-item" style="color: gray;" href="{% url 'productpage' 'Motorola Mobile' %}">Motorola Mobile</a></li>
+              <li><a class="dropdown-item" style="color: gray;" href="{% url 'productpage' 'Oppo' %}">Oppo</a></li>
+              <li><a class="dropdown-item" style="color: gray;" href="{% url 'productpage' 'Realme' %}">Realme</a></li>
+              <li><a class="dropdown-item" style="color: gray;" href="{% url 'productpage' 'Google Pixel' %}">Google Pixel</a></li>
+              <li><a class="dropdown-item" style="color: gray;" href="{% url 'productpage' 'Redmi' %}">Redmi</a></li>
+
+                </li>
+          
+              </ul>
+              
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link font" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Smart tv
+              </a>
+              <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <li><a class="dropdown-item" style="color: gray;" href="{% url 'tvpage' 'Samsung tv' %}">Samsung tv</a></li>
+                <li><a class="dropdown-item" style="color: gray;" href="{% url 'tvpage' 'LG tv' %}">LG tv</a></li>
+                <li><a class="dropdown-item" style="color: gray;" href="{% url 'tvpage' 'Sony tv' %}">Sony tv</a></li>
+                <li><a class="dropdown-item" style="color: gray;" href="{% url 'tvpage' 'Mi (Xiaomi) tv' %}">Mi (Xiaomi) tv</a></li>
+                <li><a class="dropdown-item" style="color: gray;" href="{% url 'tvpage' 'TCL tv' %}">TCL tv</a></li>
+                <li><a class="dropdown-item" style="color: gray;" href="{% url 'tvpage' 'Panasonic tv' %}">Panasonic tv</a></li>
+                <li><a class="dropdown-item" style="color: gray;" href="{% url 'tvpage' 'thomson tv' %}">Thomson tv</a></li>
+                <li><a class="dropdown-item" style="color: gray;" href="{% url 'tvpage' 'hisense tv' %}">Hisense tv</a></li>
+                <li><a class="dropdown-item" style="color: gray;" href="{% url 'tvpage' 'Philips tv' %}">Philips tv</a></li>
+                <li><a class="dropdown-item" style="color: gray;" href="{% url 'tvpage' 'toshiba tv' %}">Toshiba tv</a></li>
+              </ul>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link font" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Electronics
+              </a>
+              <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <li><a class="dropdown-item" style="color: gray;" href="{% url 'electronicpage' 'Laptops' %}">Laptops</a></li>
+                <li><a class="dropdown-item" style="color: gray;" href="{% url 'electronicpage' 'Mobile Phones' %}">Mobile Phones</a></li>
+                <li><a class="dropdown-item" style="color: gray;" href="{% url 'electronicpage' 'Cameras (DSLR, Mirrorless, Point-and-Shoot)' %}">Cameras (DSLR, Mirrorless, Point-and-Shoot)</a></li>
+                <li><a class="dropdown-item" style="color: gray;" href="{% url 'electronicpage' 'Fitness Trackers' %}">Fitness Trackers</a></li>
+                <li><a class="dropdown-item" style="color: gray;" href="{% url 'electronicpage' 'Monitors' %}">Monitors</a></li>
+                <li><a class="dropdown-item" style="color: gray;" href="{% url 'electronicpage' 'Tablets' %}">Tablets</a></li>
+
+              </ul>
+            </li>
+          <li class="nav-item">
+            <a class="nav-link font" aria-current="page" href="{% url 'aboutpage'%}">About</a>
+          </li>
+          </ul>
+          <form class="d-flex ms-2" method="post"">
+            {% csrf_token %}
+            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" name="search" required>
+            <button class="btn btn-outline-success btn-sm" type="submit">Search</button>
+          </form>
+
+        </div>
+      </div>
+    </nav>
+
+{% block content %}
+
+<p class="text-center m-1 ">{{rout}}</p>
+
+{% if data_dict %}
+<div class="container mt-4">
+<div class="row">
+{% for product_name, product_info in data_dict.items %}
+<div class="col-md-4 mb-4 col-lg-3 col-sm-6">
+    <div class="card">
+      <a href="{{product_info.source}}" target="_blank" class="text-dark">
+        <img src="{{ product_info.Image_url}}" class="card-img-top p-3" alt="{{ product_name }}">
+        <div class="card-body">
+            <h5 class="card-title">{{ product_name }}</h5>
+          </a>
+            <p class="card-text">Price: {{ product_info.Price }}</p>
+            <p class="card-text">Description: {{ product_info.Description }}</p>
+            <p class="card-text">Reviews: {{ product_info.Reviews }} <img class="mb-1" height="16px" width="16px" src="https://cdn0.iconfinder.com/data/icons/stars-rounded/250/Green_Star_5-1024.png" alt=""></p>
+        </div>
+    </div>
+</div>
+
+{% endfor %}
+{% else %}
+<div class="container mt-4">
+  <div class="row">
+    {% for x,y in data.items %}
+  <div class="col-md-4 mb-4 col-lg-3 col-sm-6">
+      <div class="card">
+        <a href="{{y.source}}" target="_blank" class="text-dark">
+          <img src="{{ y.url}}" class="card-img-top p-3" alt="{{ product_name }}">
+          <div class="card-body">
+              <h5 class="card-title">{{ x }}</h5>
+            </a>
+              <p class="card-text">Price: {{ y.price }}</p>
+              <p class="card-text">Reviews: {{ y.rating }} <img class="mb-1" height="16px" width="16px" src="https://cdn0.iconfinder.com/data/icons/stars-rounded/250/Green_Star_5-1024.png" alt=""></p>
+          </div>
+      </div>
+  </div>
+  {%endfor%}
+</div>
+</div>
+{% endif %}
+{% endblock %}
